@@ -26,7 +26,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github.com/atervili/social-links-profile](https://github.com/atervili/social-links-profile)
-- Live Site URL: [https://github.io/atervili/social-links-profile](https://github.io/atervili/social-links-profile)
+- Live Site URL: [atervili.github.io/social-links-profile/](https://atervili.github.io/social-links-profile/)
 
 ## My process
 
