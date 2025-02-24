@@ -1,0 +1,198 @@
+@layer fonts, design, reset, utility, page;
+
+@layer fonts {
+    @font-face {
+        font-family: "Inter";
+        src: url("../assets/fonts/inter.ttf");
+    }
+}
+
+@layer design {
+    :root {
+        /* Colors */
+        --color-grey-900: #141414;
+        --color-grey-800: #1f1f1f;
+        --color-grey-700: #333333;
+
+        --color-green: #c4f82a;
+
+        --color-white: #ffffff;
+
+        /* Typography */
+        --font-optical-sizing-default: auto;
+
+        --font-family-text-preset-1: "Inter", serif;
+        --font-size-text-preset-1: 24px;
+        --font-style-text-preset-1: normal;
+        --font-weight-text-preset-1: 600;
+        --letter-spacing-text-preset-1: 0px;
+        --line-height-text-preset-1: 1.5;
+
+        --font-family-text-preset-2: "Inter", serif;
+        --font-size-text-preset-2: 14px;
+        --font-style-text-preset-2: normal;
+        --font-weight-text-preset-2: 400;
+        --letter-spacing-text-preset-2: 0px;
+        --line-height-text-preset-2: 1.5;
+
+        --font-weight-text-preset-2-bold: 600;
+
+        /* Spacing */
+        --spacing-500: 40px;
+        --spacing-300: 24px;
+        --spacing-200: 16px;
+        --spacing-150: 12px;
+        --spacing-100: 8px;
+        --spacing-50: 4px;
+    }
+}
+
+@layer reset {
+    html {
+        box-sizing: border-box;
+    }
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+    html,
+    body,
+    h1,
+    p,
+    img,
+    a {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@layer utility {
+    .text-preset-1 {
+        font-family: var(--font-family-text-preset-1);
+        font-optical-sizing: var(--font-optical-sizing-default);
+        font-size: var(--font-size-text-preset-1);
+        font-style: var(--font-style-text-preset-1);
+        font-weight: var(--font-weight-text-preset-1);
+        letter-spacing: var(--letter-spacing-text-preset-1);
+        line-height: var(--line-height-text-preset-1);
+    }
+
+    .text-preset-2 {
+        font-family: var(--font-family-text-preset-2);
+        font-optical-sizing: var(--font-optical-sizing-default);
+        font-size: var(--font-size-text-preset-2);
+        font-style: var(--font-style-text-preset-2);
+        font-weight: var(--font-weight-text-preset-2);
+        letter-spacing: var(--letter-spacing-text-preset-2);
+        line-height: var(--line-height-text-preset-2);
+    }
+
+    .text-preset-2-bold {
+        font-family: var(--font-family-text-preset-2);
+        font-optical-sizing: var(--font-optical-sizing-default);
+        font-size: var(--font-size-text-preset-2);
+        font-style: var(--font-style-text-preset-2);
+        font-weight: var(--font-weight-text-preset-2-bold);
+        letter-spacing: var(--letter-spacing-text-preset-2);
+        line-height: var(--line-height-text-preset-2);
+    }
+
+    .white {
+        color: var(--color-white);
+    }
+
+    .green {
+        color: var(--color-green);
+    }
+}
+
+@layer page {
+    html,
+    body,
+    main {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        color: var(--color-white);
+        background-color: var(--color-grey-900);
+    }
+
+    a.button:any-link {
+        padding: var(--spacing-150);
+        color: var(--color-white);
+        text-decoration: none;
+        text-align: center;
+        background-color: var(--color-grey-700);
+        border-radius: 8px;
+        transition:
+            background-color 0.4s,
+            color 0.4s;
+    }
+
+    a.button:hover,
+    a.button:focus-visible {
+        color: var(--color-grey-700);
+        background-color: var(--color-green);
+    }
+
+    main {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-300);
+        background-color: var(--color-grey-800);
+        border-radius: 12px;
+
+        @media (width <= 375px) {
+            width: 327px;
+            padding: var(--spacing-300);
+        }
+
+        @media (width > 375px) and (width <= 768px) {
+            width: 384 px;
+            padding: var(--spacing-500);
+        }
+
+        @media (width > 768px) {
+            width: 340px;
+            padding: var(--spacing-500);
+        }
+
+        .profile-pic {
+            width: 88px;
+            height: 88px;
+            align-self: center;
+            border-radius: 999px;
+        }
+
+        .bio {
+            text-align: center;
+        }
+
+        .name-location {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-50);
+            align-self: center;
+            text-align: center;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-200);
+
+            .button {
+                flex-basis: 100%;
+            }
+        }
+    }
+}
